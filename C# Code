@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _22.Lilly
+{
+    class lilly
+    {
+        static void Main(string[] args)
+        {
+            int age = int.Parse(Console.ReadLine());
+            double loundry = double.Parse(Console.ReadLine());
+            int PricePerToy = int.Parse(Console.ReadLine());
+            var moneyPerYear = 0;
+            var moneyPerYear1 = 0;
+            var toyPrice = 0;
+            var allMoney = 0;
+            var steal = 0;
+            for (int i = 1; i <= age; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    moneyPerYear +=10;
+                    moneyPerYear1 += moneyPerYear;
+                    steal++;
+                }
+                else
+                {
+                    toyPrice += PricePerToy;
+                    
+                }
+            }
+            double allPrice =( moneyPerYear1 -steal)+ (toyPrice);
+            if (allPrice >= loundry)
+            {
+                Console.WriteLine("Yes! {0:f2}",allPrice - loundry);
+            }
+            else
+            {
+                Console.WriteLine("No! {0:f2}",loundry-allPrice );
+
+            }
+           
+        }
+    }
+}
